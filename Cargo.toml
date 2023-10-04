@@ -1,0 +1,20 @@
+[package]
+name = "ret_ty_attr"
+edition = "2021"
+version = "0.1.0"
+authors = ["Dmitrii Demenev <demenev.dmitriy1@gmail.com>"]
+description = "Specify the return type depending on configuration conditional checks."
+documentation = "https://docs.rs/ret_ty_attr"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/JohnScience/ret_ty_attr"
+keywords = ["cfg", "cfg_attr", "conditional", "compilation", "type"]
+categories = ["rust-patterns"]
+
+[dependencies]
+syn = { version = "2", features = ["full", "parsing", "printing"] }
+quote = "1"
+proc-macro2 = "1"
+
+[lib]
+proc-macro = true
