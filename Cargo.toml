@@ -1,7 +1,7 @@
 [package]
 name = "ret_ty_attr"
 edition = "2021"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Dmitrii Demenev <demenev.dmitriy1@gmail.com>"]
 description = "Specify the return type depending on configuration conditional checks."
 documentation = "https://docs.rs/ret_ty_attr"

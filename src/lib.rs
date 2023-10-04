@@ -6,7 +6,11 @@ use quote::ToTokens;
 pub fn ret_ty(meta: pm::TokenStream, input: pm::TokenStream) -> pm::TokenStream {
     fn inner(meta: pm2::TokenStream, input: pm2::TokenStream) -> syn::Result<pm2::TokenStream> {
         let mut input = syn::parse2::<syn::ItemFn>(input)?;
-        let ret_ty = syn::parse2::<syn::ReturnType>(meta)?;
+        let ret_ty: syn::ReturnType = if meta.is_empty() {
+            syn::ReturnType::Default
+        } else {
+            syn::parse2::<syn::ReturnType>(meta)?
+        };
         let syn::ItemFn {
             sig: syn::Signature { output, .. },
             ..
